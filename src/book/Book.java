@@ -1,6 +1,8 @@
 package book;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private int id;
     private String title;
     private String author;
@@ -31,6 +33,8 @@ public class Book {
     public int getYear() {
         return year;
     }
+
+    public double getPrice() {return price;}
 
     public int getPageCount() {
         return pageCount;
