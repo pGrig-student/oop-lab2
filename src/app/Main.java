@@ -1,6 +1,8 @@
 package app;
 
 import book.Book;
+import repository.BookRepository;
+import repository.BookRepositoryTextImpl;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -15,6 +17,8 @@ public class Main {
         books[3] = new Book(4, "Гайдамаки", "Шевченко Т.Г.", "Основа", 2005, 180, 120.00);
         books[4] = new Book(5, "Java. Ефективне програмування", "Джошуа Блох", "Addison-Wesley", 2019, 450, 1200.00);
         run(books);
+        BookRepository textRepo = new BookRepositoryTextImpl();
+        textRepo.outputArray(books, "books.txt");
     }
 
     public static Book[] getBooksByAuthor(Book[] books, String author) {

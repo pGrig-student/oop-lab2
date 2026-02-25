@@ -7,7 +7,6 @@ import java.io.File;
 public class BookRepositoryBinaryImpl implements BookRepository {
     @Override
     public void outputArray(Book[] t, File file) {
-
     }
 
     @Override
