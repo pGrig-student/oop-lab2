@@ -30,11 +30,11 @@ public class BookRepositoryTextImpl implements BookRepository {
 
     @Override
     public Book[] readArray(File file) {
-        try (Reader reader = new FileReader(file)) {
+        try {
+            String jsonText = Files.readString(file.toPath());
 
             Gson gson = new Gson();
-
-            return gson.fromJson(String.valueOf(reader), Book[].class);
+            return gson.fromJson(jsonText, Book[].class);
 
         } catch (IOException e) {
             System.out.println("Помилка читання файлу: " + e.getMessage());

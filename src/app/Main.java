@@ -19,6 +19,8 @@ public class Main {
         run(books);
         BookRepository textRepo = new BookRepositoryTextImpl();
         textRepo.outputArray(books, "books.txt");
+        Book[] booksFromFile = textRepo.readArray("books.txt");
+        printBooks(booksFromFile);
     }
 
     public static Book[] getBooksByAuthor(Book[] books, String author) {
